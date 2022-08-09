@@ -1,22 +1,16 @@
-# Sample Hardhat Project
+# UUPS proxy pattern Sample Project.
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Openzeppelin is providing heavenly help to blockchain world and here is one of the proxy pattern implementation. [docs](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable)
 
-Try running some of the following tasks:
+Pizza contract which is upgradeable to PizaaV2, scripts to deploy the proxy and upgrade it are included in project.
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
+## Terminal commands to run this file : 
+
+```
+- npx hardhat compile
+- env $(cat .env) npx hardhat run --network ropsten scripts/deploy_pizza_v1.js
+- env $(cat .env) npx hardhat verify --network ropsten <implementation address>
+- env $(cat .env) npx hardhat run --network ropsten scripts/upgrade_pizza_v2.js
 ```
 
-** Terminal commands to run this file : **
-
-1. npx hardhat compile
-2. env $(cat .env) npx hardhat run --network ropsten scripts/deploy_box_v1.js
-3. env $(cat .env) npx hardhat verify --network ropsten [Replace with proxy address and remove square brackets...]
-4. env $(cat .env) npx hardhat run --network ropsten scripts/upgrade_box_v2.js
-
-~ Happy upgrading ~
+For detailed guide to upload contract on Ropsten testnet [guide](https://github.com/ishinu/Re-Entrancy-Hack-Upgradeable-#pre-requisites-).
