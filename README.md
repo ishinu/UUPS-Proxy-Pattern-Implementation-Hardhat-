@@ -1,4 +1,4 @@
-# UUPS proxy pattern Sample Project.
+# UUPS Proxy Pattern Sample Project.
 
 Openzeppelin is providing heavenly help to blockchain world and here is one of the proxy pattern implementation. [docs](https://docs.openzeppelin.com/contracts/4.x/api/proxy#UUPSUpgradeable)
 
