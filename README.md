@@ -1,22 +1,10 @@
-# Sample Hardhat Project
+# UUPS Proxy Pattern Implementation
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+It allows us to upgrade previously deployed contracts for timely updates. Comparetively cheaper than TransparentUpgradeable Proxy pattern.
 
-Try running some of the following tasks:
+In simple words, it works as follows :
 
-```shell
-npx hardhat help
-npx hardhat test
-GAS_REPORT=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+- `upgradeProxy()` is applied to deploy `ERC1967 Proxy` which delegates all calls to the implementation as well the functionality to upgrade to a newer implementation.
+- Unlike `TransparentUpgradeable Proxy` It doesn't have `ProxyAdmin` for upgrade functionality due to which it's cheaper for deployments.
 
-** Terminal commands to run this file : **
-
-1. npx hardhat compile
-2. env $(cat .env) npx hardhat run --network ropsten scripts/deploy_box_v1.js
-3. env $(cat .env) npx hardhat verify --network ropsten [Replace with proxy address and remove square brackets...]
-4. env $(cat .env) npx hardhat run --network ropsten scripts/upgrade_box_v2.js
-
-~ Happy upgrading ~
+For detailed difference between proxy patterns, feel free to check out [this](https://github.com/ishinu/Beacon-Proxy-Upgrade-Example-Hardhat-) repository `README` file.
